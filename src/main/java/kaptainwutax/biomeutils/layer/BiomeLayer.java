@@ -23,7 +23,7 @@ public abstract class BiomeLayer {
 	}
 
 	public int get(int x, int z) {
-		long v = (long)x << 32 | z;
+		long v = x & 0xFFFFFFFFL | ((long)z & 0xFFFFFFFFL) << 32;
 		Integer r = this.cache.get(v);
 
 		if(r == null) {
