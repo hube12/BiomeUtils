@@ -65,6 +65,7 @@ public class ClimateLayer {
 
 		@Override
 		public int sample(int n, int e, int s, int w, int center) {
+			//System.out.println("tok"+n+e+s+w+center);
 			return center != 4 || n != 1 && e != 1 && w != 1 && s != 1 && n != 2 && e != 2 && w != 2 && s != 2 ? center : 3;
 		}
 	}

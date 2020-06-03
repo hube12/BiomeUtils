@@ -3,7 +3,7 @@ package kaptainwutax.biomeutils;
 import kaptainwutax.biomeutils.layer.BiomeLayer;
 import kaptainwutax.biomeutils.layer.composite.VoronoiLayer;
 import kaptainwutax.biomeutils.layer.land.*;
-import kaptainwutax.biomeutils.layer.scale.CurveLayer;
+import kaptainwutax.biomeutils.layer.scale.Curve;
 import kaptainwutax.biomeutils.layer.scale.ScaleLayer;
 import kaptainwutax.biomeutils.layer.shore.EaseEdgeLayer;
 import kaptainwutax.biomeutils.layer.shore.EdgeBiomesLayer;
@@ -40,20 +40,20 @@ public class BiomeSource {
 
 		this.base = new ContinentLayer(this.worldSeed, 1L);
 		this.base = new ScaleLayer(this.worldSeed, 2000L, ScaleLayer.Type.FUZZY, this.base);
-		this.base = new CurveLayer(this.worldSeed, 1L, this.base);
+		this.base = new Curve(this.worldSeed, 1L, this.base);
 		this.base = new ScaleLayer(this.worldSeed, 2001L, ScaleLayer.Type.NORMAL, this.base);
-		this.base = new CurveLayer(this.worldSeed, 2L, this.base);
-		this.base = new CurveLayer(this.worldSeed, 50L, this.base);
-		this.base = new CurveLayer(this.worldSeed, 70L, this.base);
+		this.base = new Curve(this.worldSeed, 2L, this.base);
+		this.base = new Curve(this.worldSeed, 50L, this.base);
+		this.base = new Curve(this.worldSeed, 70L, this.base);
 		this.base = new IslandLayer(this.worldSeed, 2L, this.base);
 		this.base = new ClimateLayer.Cold(this.worldSeed, 2L, this.base);
-		this.base = new CurveLayer(this.worldSeed, 3L, this.base);
+		this.base = new Curve(this.worldSeed, 3L, this.base);
 		this.base = new ClimateLayer.Temperate(this.worldSeed, 2L, this.base);
 		this.base = new ClimateLayer.Cool(this.worldSeed, 2L, this.base);
 		this.base = new ClimateLayer.Special(this.worldSeed, 3L, this.base);
 		this.base = new ScaleLayer(this.worldSeed, 2002L, ScaleLayer.Type.NORMAL, this.base);
 		this.base = new ScaleLayer(this.worldSeed, 2003L, ScaleLayer.Type.NORMAL, this.base);
-		this.base = new CurveLayer(this.worldSeed, 4L, this.base);
+		this.base = new Curve(this.worldSeed, 4L, this.base);
 		this.base = new MushroomLayer(this.worldSeed, 5L, this.base);
 		this.base = new DeepOceanLayer(this.worldSeed, 4L, this.base);
 		this.base = stack(1000L, NORMAL_SCALE, this.base, 0);
@@ -78,7 +78,7 @@ public class BiomeSource {
 
 		for(int i = 0; i < this.biomeSize; i++) {
 			this.full = new ScaleLayer(this.worldSeed, 1000L + i, ScaleLayer.Type.NORMAL, this.full);
-			if(i == 0)this.full = new CurveLayer(this.worldSeed, 3L, this.full);
+			if(i == 0)this.full = new Curve(this.worldSeed, 3L, this.full);
 
 			if(i == 1 || this.biomeSize == 1) {
 				this.full = new EdgeBiomesLayer(this.worldSeed, 1000L, this.full);

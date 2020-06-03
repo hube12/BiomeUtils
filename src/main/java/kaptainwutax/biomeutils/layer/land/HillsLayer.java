@@ -18,13 +18,13 @@ public class HillsLayer extends MergingLayer {
 	@Override
 	public int sample(int x, int z) {
 		this.setSeed(x, z);
-		int i = this.parents[0].get(x, z);
-		int j = this.parents[1].get(x, z);
+		int i = this.parents[0].get(x, z); // -> biome
+		int j = this.parents[1].get(x, z); // -> river noise >=2 ->
 
 		int k = (j - 2) % 29;
 		Biome biome3;
 
-		if (!BiomeSource.isShallowOcean(i) && j >= 2 && k == 1) {
+		if (!BiomeSource.isShallowOcean(i) && j >= 2 && k == 1) { // (j-2)%29==1 but j= nextInt(299999) + 2 so nextInt(299999)%29==1
 			Biome biome = Biome.REGISTRY.get(i);
 
 			if(biome == null || !biome.hasParent()) {

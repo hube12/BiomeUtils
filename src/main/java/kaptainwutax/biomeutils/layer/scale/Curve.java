@@ -4,13 +4,13 @@ import kaptainwutax.biomeutils.BiomeSource;
 import kaptainwutax.biomeutils.layer.BiomeLayer;
 import kaptainwutax.biomeutils.layer.composite.XCrossLayer;
 
-public class CurveLayer extends XCrossLayer {
+public class Curve extends XCrossLayer {
 
-	public CurveLayer(long worldSeed, long salt, BiomeLayer parent) {
+	public Curve(long worldSeed, long salt, BiomeLayer parent) {
 		super(worldSeed, salt, parent);
 	}
 
-	public CurveLayer(long worldSeed, long salt) {
+	public Curve(long worldSeed, long salt) {
 		this(worldSeed, salt, null);
 	}
 
