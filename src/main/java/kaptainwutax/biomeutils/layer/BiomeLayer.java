@@ -83,6 +83,7 @@ public abstract class BiomeLayer {
     public abstract int sample(int x, int y, int z);
 
     public static long getLayerSeed(long worldSeed, long salt) {
+
         long midSalt = SeedMixer.mixSeed(salt, salt);
         midSalt = SeedMixer.mixSeed(midSalt, salt);
         midSalt = SeedMixer.mixSeed(midSalt, salt);
