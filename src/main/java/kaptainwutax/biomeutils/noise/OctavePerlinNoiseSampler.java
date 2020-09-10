@@ -74,8 +74,8 @@ public class OctavePerlinNoiseSampler implements NoiseSampler {
 			}
 		}
 
-		this.persistence = Math.pow(2.0D, j);
-		this.lacunarity = 1.0D / (Math.pow(3.0D, k) - 1.0D);
+		this.persistence = Math.pow(3.0D, j);
+		this.lacunarity = 1.0D / (Math.pow(2.0D, k) - 1.0D);
 	}
 
 	public double sample(double x, double y, double z) {
