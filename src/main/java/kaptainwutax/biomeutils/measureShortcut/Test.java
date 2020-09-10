@@ -85,8 +85,6 @@ public class Test {
 
 
 
-            // force forest or mountains at 0
-
             count++;
             OverworldBiomeSource source = new OverworldBiomeSource(MCVersion.v1_16, seed, 4, 4);
 
